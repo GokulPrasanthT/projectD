@@ -1,0 +1,127 @@
+===================================================
+#Method OverLoad
+public class Calculator
+{
+	public int add(int x,int y)
+	{
+		return x+y;
+	}
+	public int add(int x,int y,int z)
+	{
+		return x+y+z;
+	}
+	public int add(double x, double y)
+	{
+		return int x+y;
+	}
+}
+==================================================
+# Method Override 
+
+public class Baseclass
+{
+	public void doAtask()
+	{
+		// implement a logic here
+	}
+public class ChildClas extends Baseclass
+{
+	public void doAtask()
+	{
+		//implement with a different logic here
+	}
+}
+
+public calss ServiceControl
+{
+	public vid doSomeOperation(Baseclass obj)
+	{
+		obj.doAtask();
+	}
+}
+
+public class Main
+{
+	public static void main(String args[])
+	{
+		ServiceControl sc = new ServiceControl();
+		Baseclass bc = new Baseclass();	
+		ChildClass cc = new ChildClass();
+		sc.dSomeOperator(bc);
+		sc.doSomeOperator(cc);
+
+=======================================================================
+#Factory Method 
+
+public class Scoreboard
+private int currentScore=167;
+private Scoreboard ()
+{
+
+}
+public int getScore ()
+{
+	return currentScore;
+}
+
+
+// Factory Method 
+public static Scoreboard getScoreBoard () 
+{
+return new Scoreboard ();
+}
+--------------------------------
+public class TestScoreboard
+{
+public static void main(string args[])
+{
+Scoreboard sb = Scoreboard.getScoreBoard();
+int score = sb.getScore();
+System.out.println(Score);
+}
+=============================================
+public class Game {
+private int duration; 
+// public Game () {}
+public Game (int time) 
+{
+	duration=time; 
+}
+public void startPlaying ()
+{
+	System.out.println("Game started");
+}
+
+}
+class VideoGame extends Game
+public VideoGame ()
+{
+	super (0);
+}
+public VideoGame (int time)
+{
+	super (time);
+}
+============================================
+#Final and static Final Keyword
+
+public class TestFinal { 
+private final int dataA; // read only field 
+private static final int dataB-123; // constant public TestFinal (int x)
+{
+dataA=x; // Value |
+}
+public String toString()
+{
+return dataA+" "+ dataB;
+}
+}
+
+public class Main {
+public static void main(String[] args) {
+TestFinal tf_one-new TestFinal (100);
+System.out.println (tf_one.toString());
+TestFinal tf_two-new TestFinal (500);
+System.out.println (tf_two.toString());
+I
+}

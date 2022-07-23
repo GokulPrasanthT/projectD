@@ -1,0 +1,122 @@
+1. What are the 2 most important differences between an Array, and a Collection?
+Answer:
+	Array :
+			Arrays are fixed in size that is once we create an array we can not increased or decreased based on our requirement.
+	Collection :
+			Collection can dynamically grow in size and based on requirement the size can be increased r decreased.
+========================================================================================================================================================
+2. What are the differences between a List , and a Map?
+Answer : 
+	Map : 
+		Map stored the elements as key & value pair. Map doesn’t allow duplicate keys while it allows duplicate values.
+		Map can have single null key at most and any number of null values.
+	List : 
+		List allow the duplicate values.Any number of duplicate elements can be inserted into the list without affecting the same existing values and their indexes.
+		List allows any number of null values.
+==========================================================================================================================================================
+3. When to use a List?
+Answer : 
+	 If there is a need of frequent search operations based on the index values then List (ArrayList) is a better choice.
+	 If there is a need of maintaining the insertion order then also the List is a preferred collection interface.
+=========================================================================================================================================================
+4. When to use a Map instead of a List?
+Answer : 
+	when you want your data structure to represent a mapping for keys to values.
+=========================================================================================================================================================
+5. What is the important properties of a Set?
+Answer : 
+		Insertion order not preserved
+		Not allow duplicate values
+		but using linked_list hash_set we achieve list properties like insertion order preserved
+==========================================================================================================================================================
+6. How to iterate a Map?
+Answer :
+		Iterating over Map.entrySet() using For-Each loop
+		Iterating over keys or values using keySet() and values() methods 
+		Iterating using iterators over Map.Entry<K, V> 
+		Using forEach(action) method 
+		Iterating over keys and searching for values (inefficient) 
+===========================================================================================================================================================
+7. Are ArrayList Thread safe. If not how to make it Thread Safe?
+Answer : 
+		ArrayList is not thread safe. Because multiple threads update at the same time is undefined.We can make it safe by using lock and concurrency.
+		Lock: We can use lock to limit the access and one thread is access and other waits.
+		Concurrency: all operations on a data structure are atomic, it may be accessed (read and written) from multiple threads at a time.
+============================================================================================================================================================
+8. Why should a class override the equals() and hashCode() methods if its objects are to be assigned to a HashMap, or HashSet?
+Answer :
+		we must have to override hashCode() in every class that overrides equals(). Failure to do so will result in a violation of the general contract for Object. hashCode(), which will prevent your class from functioning properly in conjunction with all hash-based collections, including HashMap, HashSet, and Hashtable.
+===============================================================================================================================================================
+9. What is the purpose of Comparable interface?
+Answer :
+		Comparable interface is used to compare an object of the same class with an instance of that class, it provides ordering of data for objects of the user-defined class.
+		Example :
+		 public int compareTo(Object obj)
+        // This method is defined in Comparable interface for comparing objects (defined in java.lang package) like this:
+        package java.lang;
+        public interface Comparable<E> 
+        {
+            public int compareTo(Object obj);
+        }
+=============================================================================================================================================================
+10 Comparable vs Comparator?
+Answer :
+		Comparable                                  Comparator
+
+Comparable provides single                Comparator provides
+sorting sequence.                        multiple sequence.
+
+Comparable affects the                   Comparator doesn't 
+original class.                          affects the original class.
+                                                  
+Comparable provides                      Comaparator provides 
+CompareTo()  method to                   Compare() method to sort.
+sort.
+
+Comparable are present in                Comaparator are present
+java.lang package. 						 in java.util package.
+
+Comparable Code Example :										
+	 import java.time.LocalDate;						
+         public class Employee implements 
+		 Comparable<Employee> {
+            private Long id;
+            private String name;
+            private LocalDate dob;
+     
+            @Override
+        public int compareTo(Employee o) 
+        {
+           return this.getId().compareTo(o.getId());
+        }
+    }
+Comparator Code Example :
+	import java.util.Comparator;
+    public class NameSorter implements Comparator<Employee>
+    {
+        @Override
+        public int compare(Employee e1, Employee e2) 
+        {
+            return e1.getName().compareToIgnoreCase( e2.getName());
+        }
+    }    
+================================================================================================================================================================
+
+
+=============================================================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Map : Map is a Not a sub interface of Collection interface
+ 
